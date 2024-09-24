@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html{
+        overflow: hidden;
+      }
+      body {
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* color:white; */
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: palevioletred;
+        position: relative;
+        transition: all 0.3s linear;
+
+      }
+      .card {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s linear;
+      }
+      .card-1 {
+        background-color: lightsalmon;
+      }
+      .card-2 {
+        background-color:  lightseagreen;
+      }
+      .card-3 {
+        background-color: lightblue;
+      }
+      .card-4 {
+        background-color: lightpink;
+      }
+      .box:hover {
+        background-image: url(./pngwing.com.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+        background-color: rgba( 255, 192, 203, 0.5);
+        transform: scale(0.5);
+       
+      }
+      video::before{
+        content: "";
+        position: absolute;   
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    
+      .box:hover .card-1 {
+        transform: translate(-250px, -250px) scale(0.5);
+        border-top-left-radius: 100%;
+      }
+      .box:hover .card-2 {
+        transform: translate(250px, -250px) scale(0.5);
+        border-top-right-radius: 100%;
+      }
+      .box:hover .card-3 {
+        transform: translate(-250px, 250px) scale(0.5);
+        border-bottom-left-radius: 100%;
+      }
+      .box:hover .card-4 {
+        transform: translate(250px, 250px) scale(0.5);
+        border-bottom-right-radius: 100%;
+      }
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        z-index: -99;
+        visibility: hidden;
+      }
+      .box:hover + video{
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box">
+        <video autoplay muted loop>
+            <source src="./sofia_the_first.mp4">
+        </video>
+    </div> -->
+
+    <div class="box">
+      <div class="card card-1"></div>
+      <div class="card card-2"></div>
+      <div class="card card-3"></div>
+      <div class="card card-4"></div>
+    </div>
+    <video autoplay muted loop>
+      <source src="./sofia_the_first.mp4" />
+    </video>
+  </body>
+</html>
