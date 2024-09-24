@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before-after</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html,
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #242424;
+            color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            width: 400px;
+            height: 400px;
+            background-image: url('./images/img_3.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+            position: relative;
+            perspective: 800px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/img_5.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+            transform: rotateY(30deg);
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+
+        .card::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/img_7.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+            transform: rotateY(-30deg);
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .card:hover:before{
+            rotate: y -90deg;
+            opacity: 1;
+        }
+
+        .card:hover:after{
+            rotate: y 90deg;
+            opacity: 1;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+    </div>
+</body>
+</html>
