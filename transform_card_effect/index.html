@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-image: url(./pexels-krisof-1252873.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        transition: all 0.5s ease-in;
+      }
+      .box > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        transform: scale(0.5);
+        object-fit: cover;
+        transition: all 0.5s linear;
+      }
+      .card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(100, 100, 100, 0.5);
+        padding: 20px 10px;
+        color: #ffffff;
+        border-radius: 20px;
+        transform: translateY(200px);
+        visibility: hidden;
+        transition: all 0.5s linear;
+      }
+      .card h1,
+      .card p {
+        text-align: justify;
+        line-height: 1.5;
+      }
+      .card > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        object-fit: cover;
+        transform: rotateZ(-180deg);
+        transition: all 0.5s linear;
+        visibility: hidden;
+      }
+      .box:hover > img {
+        transform: scale(1.2);
+        border-radius: 20px;
+      }
+      .box:hover .card {
+        visibility: visible;
+        transform: translateY(-100px);
+      }
+      .box:hover .card > img {
+        transform: rotateZ(0) translateX(100px);
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="./anya-spyxfamily.jpg" alt="Anya" />
+      <div class="card">
+        <img src="./anya-spyxfamily.jpg" alt="anya" />
+        <h3>Anya Forger</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto hic
+          qui placeat error, animi praesentium quos. Nam iste unde a! Lorem
+          ipsum dolor sit, amet consectetur adipisicing elit. Iusto hic qui
+          placeat error, animi praesentium quos. Nam iste unde a!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
